@@ -1,4 +1,7 @@
+const fs = require('fs');
+const path = require('path');
 const { build } = require('esbuild');
+const purgeCSSPlugin = require('esbuild-plugin-purgecss');
 
 
 const skipReactImports = {
@@ -25,8 +28,22 @@ const skipReactImports = {
     },
 };
 
+const copyPlugin = (from, to) => {
+    return {
+        name: 'copyPlugin',
+        setup(build) {
+            build.onEnd(() => fs.cpSync(from, path.join(path.dirname(build.initialOptions.outdir), to), {
+                recursive: true,
+                force: true,
+                dereference: true
+            }));
+        },
+    }
+}
+
 (() => {
   const finish = ({ errors, warnings }) => console.log(`Build finished.\nErrors: ${errors.length}, Warnings: ${warnings.length}`);
+  const error = (error) => { console.error(error); process.exit(1); };
   const onRebuild = (error) => (error ? console.error(error) : finish({ errors: [], warnings: [] }));
 
   build({
@@ -36,10 +53,15 @@ const skipReactImports = {
     minify: true,
     sourcemap: false,
     splitting: true,
+    metafile: true,
     outdir: 'dist',
     charset: 'utf8',
-    entryPoints: ['src/App.tsx'],
+    entryPoints: ['styles/bootstrap.css', 'src/index.tsx'],
     external: ['react', 'react-dom'],
-    plugins: [skipReactImports],
-  }).then(finish).catch(() => process.exit(1));
+    plugins: [
+        skipReactImports,
+        purgeCSSPlugin(),
+        copyPlugin('index.html', 'dist/index.html')
+    ],
+  }).then(finish).catch(error);
 })();
