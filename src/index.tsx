@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 
-const Panel = React.lazy(() => import("./Panel"));
+const Panel = React.lazy(() => import("./components/Panel"));
 
 const App = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <>
             <h1>Hello, ESBUILD!</h1>
             <button
                 type="button"
@@ -22,7 +22,7 @@ const App = () => {
                     <Panel/>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

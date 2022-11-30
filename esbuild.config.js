@@ -61,7 +61,8 @@ const copyPlugin = (from, to) => {
     plugins: [
         skipReactImports,
         purgeCSSPlugin(),
-        copyPlugin('index.html', 'dist/index.html')
+        copyPlugin('index.html', 'dist/index.html'),
+        copyPlugin('favicon.ico', 'dist/favicon.ico')
     ],
   }).then(finish).catch(error);
 })();
