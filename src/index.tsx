@@ -16,12 +16,6 @@ const App = () => {
             >
                 Primary
             </button>
-            <div className="container px-4 text-center">
-                <div className="row gx-5">
-                    <Panel/>
-                    <Panel/>
-                </div>
-            </div>
         </>
     );
 };
@@ -33,7 +27,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/panel",
-        element: <Panel />,
+        element:  (
+            <React.Suspense fallback={<h1>Loading...</h1>}>
+                <Panel />
+            </React.Suspense>
+        ),
     }
 ]);
 
