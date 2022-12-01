@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { build } = require('esbuild');
 const purgeCSSPlugin = require('esbuild-plugin-purgecss');
+const cssModulesPlugin = require('esbuild-css-modules-plugin');
 
 
 const skipReactImports = {
@@ -54,13 +55,21 @@ const copyPlugin = (from, to) => {
     sourcemap: false,
     splitting: true,
     metafile: true,
+    write: true,
+    logLevel: 'debug',
+    target: ['es2020'],
     outdir: 'dist',
     charset: 'utf8',
-    entryPoints: ['styles/bootstrap.css', 'src/index.tsx'],
+    entryPoints: ['src/bootstrap.css', 'src/index.tsx'],
     external: ['react', 'react-dom'],
     plugins: [
         skipReactImports,
         purgeCSSPlugin(),
+        cssModulesPlugin({
+            inject: true,
+            localsConvention: 'camelCaseOnly',
+            filter: /\.modules?\.css$/i
+        }),
         copyPlugin('index.html', 'dist/index.html'),
         copyPlugin('favicon.ico', 'dist/favicon.ico')
     ],

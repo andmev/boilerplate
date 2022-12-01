@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "esbuild-css-modules-plugin": "2.6.2",
     "esbuild-plugin-purgecss": "0.0.6"
   }
 }

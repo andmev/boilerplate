@@ -1,3 +1,4 @@
+declare module "*.modules.css";
 declare module "react-dom" {
     import { Root, RootOptions } from "react-dom/client";
 
