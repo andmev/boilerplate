@@ -57,7 +57,7 @@ const copyPlugin = (from, to) => {
     metafile: true,
     write: true,
     logLevel: 'debug',
-    target: ['es2020'],
+    target: ['es2021'],
     outdir: 'dist',
     charset: 'utf8',
     entryPoints: ['src/bootstrap.css', 'src/index.tsx'],
