@@ -7,34 +7,35 @@ const Root = React.lazy(() => import("./Root"));
 const Inventory = React.lazy(() => import("./Inventory"));
 const Products = React.lazy(() => import("./Products"));
 
-const router = createBrowserRouter([{
+const router = createBrowserRouter([
+  {
     id: "root",
     path: "/",
     element: <Root />,
-    children: [{
+    children: [
+      {
         id: "crew",
         path: "crew",
         element: <Crew />,
-    },
-    {
+      },
+      {
         id: "inventory",
         path: "inventory",
         element: <Inventory />,
-    },
-    {
+      },
+      {
         id: "products",
         path: "products",
         element: <Products />,
-    }]
-}]);
+      },
+    ],
+  },
+]);
 
 // App Component
-const container = document.getElementById('root') as HTMLElement;
+const container = document.getElementById("root") as HTMLElement;
 ReactDOM.createRoot(container).render(
-    <React.StrictMode>
-        <RouterProvider
-            router={router}
-            fallbackElement={<h1>Loading...</h1>}
-        />
-    </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router} fallbackElement={<h1>Loading...</h1>} />
+  </React.StrictMode>
 );

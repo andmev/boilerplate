@@ -1,7 +1,5 @@
-import React from "react"
+import React from "react";
 import styles from "./styles.modules.css";
 export default () => {
-    return (
-        <h1 className={styles.redTitle}>Inventory</h1>
-    )
-}
+  return <h1 className={styles.redTitle}>Inventory</h1>;
+};
