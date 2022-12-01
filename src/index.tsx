@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const Crew = React.lazy(() => import("./Crew"));
-const Root = React.lazy(() => import("./Root"));
-const Inventory = React.lazy(() => import("./Inventory"));
-const Products = React.lazy(() => import("./Products"));
+const Crew = React.lazy(() => import("./views/Crew"));
+const Root = React.lazy(() => import("./views/Root"));
+const Inventory = React.lazy(() => import("./views/Inventory"));
+const Products = React.lazy(() => import("./views/Products"));
 
 const router = createBrowserRouter([
   {

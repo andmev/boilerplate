@@ -67,7 +67,7 @@ const copyPlugin = (from, to) => {
         purgeCSSPlugin(),
         cssModulesPlugin({
             inject: true,
-            localsConvention: 'camelCaseOnly',
+            localsConvention: 'dashesOnly',
             filter: /\.modules?\.css$/i
         }),
         copyPlugin('index.html', 'dist/index.html'),
