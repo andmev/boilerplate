@@ -5,7 +5,7 @@
   "scripts": {
     "build-watch": "node esbuild.config.js -w",
     "build": "node esbuild.config.js",
-    "serve": "npx serve dist",
+    "serve": "lite-server --baseDir=\"dist\" --port=3000",
     "prebuild": "rm -rf dist"
   },
   "author": "Andrii Medvediev <andrii@medvediev.org>",

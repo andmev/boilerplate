@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Loading from "./components/Loading";
 
 const Crew = React.lazy(() => import("./views/Crew"));
 const Root = React.lazy(() => import("./views/Root"));
@@ -36,6 +37,6 @@ const router = createBrowserRouter([
 const container = document.getElementById("root") as HTMLElement;
 ReactDOM.createRoot(container).render(
   <React.StrictMode>
-    <RouterProvider router={router} fallbackElement={<h1>Loading...</h1>} />
+    <RouterProvider router={router} fallbackElement={<Loading />} />
   </React.StrictMode>
 );
