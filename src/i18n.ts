@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import Backend from "i18next-http-backend";
+import LocalStorageBackend from "i18next-localstorage-backend"; // primary use cache
 import LanguageDetector from "i18next-browser-languagedetector";
 // don't want to use this?
 // have a look at the Quick start guide
@@ -19,13 +20,29 @@ i18n
   .use(initReactI18next)
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
-  .init({
-    fallbackLng: "en",
-    debug: true,
+  .init(
+    {
+      fallbackLng: "en",
+      debug: true,
+      load: "languageOnly",
 
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      backend: {
+        backends: [LocalStorageBackend], // primary use cache
+      },
+
+      ns: ["common"],
+      defaultNS: "common",
+
+      interpolation: {
+        escapeValue: false, // not needed for react as it escapes by default
+      },
     },
-  });
+    (err, t) => {
+      if (err) {
+        console.error(err);
+      }
+      t("i18n_short");
+    }
+  );
 
 export default i18n;
