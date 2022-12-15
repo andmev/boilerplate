@@ -10,21 +10,23 @@ export default () => {
     { name: "Crew", path: "crew" },
   ];
   return (
-    <nav className="navbar navbar-expand-lg justify-content-center">
-      <ul className="navbar-nav">
-        {navItems.map(({ name, path }) => (
-          <li key={name} className="nav-item">
-            <NavLink
-              to={path}
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-            >
-              {name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <header className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mx-auto">
+          {navItems.map(({ name, path }) => (
+            <li key={name} className="nav-item active">
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                {name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 };

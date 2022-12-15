@@ -13,7 +13,7 @@ export default () => {
     },
   ];
   return (
-    <div className="container-fluid">
+    <main className="container-fluid">
       <div className="container-fluid">
         <div className="row">
           <h1>Day</h1>
@@ -70,6 +70,6 @@ export default () => {
           ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 };

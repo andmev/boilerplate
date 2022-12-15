@@ -10,9 +10,8 @@ export default () => {
   return (
     <>
       <Navigation />
-      {isHome && <Day />}
       <React.Suspense fallback={<Loading />}>
-        <Outlet />
+        {isHome ? <Day /> : <Outlet />}
       </React.Suspense>
     </>
   );
