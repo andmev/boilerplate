@@ -9,6 +9,7 @@ const Crew = React.lazy(() => import("./views/Crew"));
 const Layout = React.lazy(() => import("./views/Layout"));
 const Home = React.lazy(() => import("./views/Home"));
 const Login = React.lazy(() => import("./views/Login"));
+const Forgot = React.lazy(() => import("./views/Forgot"));
 const Languages = React.lazy(() => import("./views/Languages"));
 const SignUp = React.lazy(() => import("./views/SignUp"));
 const Inventory = React.lazy(() => import("./views/Inventory"));
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
     id: "signup",
     path: "signup",
     element: <SignUp />,
+  },
+  {
+    id: "forgot",
+    path: "forgot",
+    element: <Forgot />,
   },
   {
     id: "crew",

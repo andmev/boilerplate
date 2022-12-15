@@ -8,9 +8,13 @@ export default () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
+  const moveBack = useCallback(() => {
+    navigate(-1);
+  }, [navigate]);
+
   const changeLanguage = useCallback(async (code: string) => {
     await i18n.changeLanguage(code);
-    navigate(-1);
+    moveBack();
   }, []);
 
   return (
@@ -24,13 +28,13 @@ export default () => {
             type="button"
             className="btn-close"
             aria-label="Close"
-            onClick={() => navigate(-1)}
+            onClick={moveBack}
           ></button>
         </div>
       </div>
       <div className="row g-4">
         {languages.map((language) => (
-          <div className="col-2" key={language.code}>
+          <div className="col-md-2 col-4" key={language.code}>
             <button
               onClick={() => changeLanguage(language.code)}
               className={`btn btn-${
