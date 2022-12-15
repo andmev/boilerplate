@@ -20,29 +20,21 @@ i18n
   .use(initReactI18next)
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
-  .init(
-    {
-      fallbackLng: "en",
-      debug: true,
-      load: "languageOnly",
+  .init({
+    fallbackLng: "en",
+    debug: true,
+    load: "languageOnly",
 
-      backend: {
-        backends: [LocalStorageBackend], // primary use cache
-      },
-
-      ns: ["common"],
-      defaultNS: "common",
-
-      interpolation: {
-        escapeValue: false, // not needed for react as it escapes by default
-      },
+    backend: {
+      backends: [LocalStorageBackend], // primary use cache
     },
-    (err, t) => {
-      if (err) {
-        console.error(err);
-      }
-      t("i18n_short");
-    }
-  );
+
+    ns: ["common"],
+    defaultNS: "common",
+
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+  });
 
 export default i18n;
