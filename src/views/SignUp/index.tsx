@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import FixedBottomFooter from "../../components/Footer/FixedBottom";
 
 export default () => {
   const { t } = useTranslation("auth");
@@ -87,11 +88,14 @@ export default () => {
           </form>
           <ul className="mt-4 list-group list-group-flush text-center">
             <li className="list-group-item">
-              <Link to="/login">{t("login")}</Link>
+              <Link to="/login" className="text-decoration-none">
+                {t("login")}
+              </Link>
             </li>
           </ul>
         </div>
       </div>
+      <FixedBottomFooter />
     </main>
   );
 };

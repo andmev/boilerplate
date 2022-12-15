@@ -6,8 +6,10 @@ import "./i18n";
 import Loading from "./components/Loading";
 
 const Crew = React.lazy(() => import("./views/Crew"));
-const Root = React.lazy(() => import("./views/Root"));
+const Layout = React.lazy(() => import("./views/Layout"));
+const Home = React.lazy(() => import("./views/Home"));
 const Login = React.lazy(() => import("./views/Login"));
+const Languages = React.lazy(() => import("./views/Languages"));
 const SignUp = React.lazy(() => import("./views/SignUp"));
 const Inventory = React.lazy(() => import("./views/Inventory"));
 const Products = React.lazy(() => import("./views/Products"));
@@ -16,7 +18,19 @@ const router = createBrowserRouter([
   {
     id: "root",
     path: "/",
-    element: <Root />,
+    element: <Layout />,
+    children: [
+      {
+        id: "home",
+        index: true,
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    id: "languages",
+    path: "languages",
+    element: <Languages />,
   },
   {
     id: "login",

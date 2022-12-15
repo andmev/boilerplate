@@ -1,6 +1,3 @@
 {
-  "login": "Login",
-  "password": "Password",
-  "email": "Email address",
-  "name": "Name"
+  "page_languages_title": "Languages"
 }
