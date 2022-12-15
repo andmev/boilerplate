@@ -71,7 +71,8 @@ const copyPlugin = (from, to) => {
             filter: /\.modules?\.css$/i
         }),
         copyPlugin('index.html', 'dist/index.html'),
-        copyPlugin('favicon.ico', 'dist/favicon.ico')
+        copyPlugin('favicon.ico', 'dist/favicon.ico'),
+        copyPlugin('src/locales', 'dist/locales'),
     ],
   }).then(finish).catch(error);
 })();

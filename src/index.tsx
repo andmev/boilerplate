@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import "./i18n";
 import Loading from "./components/Loading";
 
 const Crew = React.lazy(() => import("./views/Crew"));
