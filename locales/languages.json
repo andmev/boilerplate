@@ -1,0 +1,16 @@
+[
+  {
+    "code": "en",
+    "name": "English",
+    "nativeName": "English",
+    "rtl": false,
+    "flag": "🇬🇧"
+  },
+  {
+    "code": "ua",
+    "name": "Ukrainian",
+    "nativeName": "Українська",
+    "rtl": false,
+    "flag": "🇺🇦"
+  }
+]

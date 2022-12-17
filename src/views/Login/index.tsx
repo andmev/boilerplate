@@ -58,7 +58,7 @@ export default () => {
           <ul className="mt-4 list-group list-group-flush text-center">
             <li className="border-bottom-0 list-group-item">
               <Link to="/forgot" className="text-decoration-none">
-                {t("forgot_password")}
+                {t("forgot.password")}
               </Link>
             </li>
             <li className="list-group-item">

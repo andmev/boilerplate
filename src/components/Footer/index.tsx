@@ -1,10 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { currentLanguage } from "../../utils/languages";
 
 export default () => {
-  const { i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <footer className="container py-4">
@@ -13,9 +12,7 @@ export default () => {
           <span>© Smina, 2022</span>
         </div>
         <div className="col-md-4 col-12">
-          <Link to="/languages">
-            {currentLanguage(i18n.language)?.nativeName}
-          </Link>
+          <Link to="/languages">{t("change_language")}</Link>
         </div>
       </div>
     </footer>

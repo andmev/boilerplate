@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./i18n";
 import Loading from "./components/Loading";
+import loadLanguages from "./views/Languages/loader";
 
 const Crew = React.lazy(() => import("./views/Crew"));
 const Layout = React.lazy(() => import("./views/Layout"));
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
     id: "languages",
     path: "languages",
     element: <Languages />,
+    loader: loadLanguages,
   },
   {
     id: "login",

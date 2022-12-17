@@ -38,7 +38,7 @@ export default () => {
               type="submit"
               className="btn btn-primary btn-block w-100 mt-4"
             >
-              {t("forgot_password_button")}
+              {t("forgot.password_button")}
             </button>
           </form>
           <ul className="mt-4 list-group list-group-flush text-center">

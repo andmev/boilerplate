@@ -72,7 +72,7 @@ const copyPlugin = (from, to) => {
         }),
         copyPlugin('index.html', 'dist/index.html'),
         copyPlugin('favicon.ico', 'dist/favicon.ico'),
-        copyPlugin('src/locales', 'dist/locales'),
+        copyPlugin('locales', 'dist/locales'),
     ],
   }).then(finish).catch(error);
 })();

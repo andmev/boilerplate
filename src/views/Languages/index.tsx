@@ -1,10 +1,17 @@
 import React, { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { languages } from "../../utils/languages";
+interface Language {
+  code: string;
+  name: string;
+  nativeName: string;
+  rtl: boolean;
+  flag: string;
+}
 
 export default () => {
+  const languages = useLoaderData() as unknown as Language[];
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
@@ -21,7 +28,7 @@ export default () => {
     <div className="container-fluid p-4">
       <div className="row align-items-center">
         <div className="col-10">
-          <h1 className="fs-1 fw-bold mb-4">{t("page_languages_title")}</h1>
+          <h1 className="fs-1 fw-bold mb-4">{t("page.languages.title")}</h1>
         </div>
         <div className="col-2">
           <button
