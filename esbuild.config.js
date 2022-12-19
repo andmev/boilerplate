@@ -60,7 +60,7 @@ const copyPlugin = (from, to) => {
     target: ['es2021'],
     outdir: 'dist',
     charset: 'utf8',
-    entryPoints: ['src/bootstrap.css', 'src/index.tsx'],
+    entryPoints: ['src/bootstrap.css', 'src/list.tsx'],
     external: ['react', 'react-dom'],
     plugins: [
         skipReactImports,

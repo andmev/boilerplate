@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import FixedBottomFooter from "../../components/Footer/FixedBottom";
 
 export default () => {
   const { t } = useTranslation("auth");
@@ -95,7 +94,6 @@ export default () => {
           </ul>
         </div>
       </div>
-      <FixedBottomFooter />
     </main>
   );
 };

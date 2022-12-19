@@ -1,9 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import Loading from "../../components/Loading";
-import Navigation from "../../components/Navigation";
-import Footer from "../../components/Footer";
+import Loading from "../Loading";
+import Navigation from "../Navigation/app";
 
 export default () => (
   <>
@@ -11,6 +10,5 @@ export default () => (
     <React.Suspense fallback={<Loading />}>
       <Outlet />
     </React.Suspense>
-    <Footer />
   </>
 );

@@ -1,12 +1,12 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default () => {
-  const { username, product, event, action } = useParams();
+  const { username, product, event, action, item } = useParams();
 
   return (
     <>
-      <h1>Crew</h1>
+      <h1>Inventory Item</h1>
       <ul>
         <li>
           Username <code>{username}</code>
@@ -21,7 +21,7 @@ export default () => {
           Action <code>{action}</code>
         </li>
         <li>
-          <Link to={`/${username}`}>Crew</Link>
+          Item <code>{item}</code>
         </li>
       </ul>
     </>
