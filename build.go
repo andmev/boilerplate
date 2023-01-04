@@ -45,14 +45,15 @@ func main() {
 		Format:            api.FormatESModule,
 		Charset:           api.CharsetUTF8,
 		Watch:             &api.WatchMode{OnRebuild: onRebuild},
-		EntryPoints:       []string{"src/bootstrap.css", "src/index.tsx"},
+		EntryPoints:       []string{"src/index.tsx"},
 		External:          []string{"react", "react-dom"},
 		Plugins: []api.Plugin{
+			plugins.Tailwind,
 			plugins.ReactImport,
+			plugins.SharpImages("images", "dist/images"),
 			plugins.CopyContent("locales", "dist/locales"),
-			plugins.CopyContent("index.html", "dist/index.html"),
-			plugins.CopyContent("favicon.ico", "dist/favicon.ico"),
-			plugins.CopyContent("images", "dist/images"), // @TODO Update this to use the Sharping Image plugin
+			plugins.CopyContent("src/index.html", "dist/index.html"),
+			plugins.CopyContent("src/favicon.ico", "dist/favicon.ico"),
 		},
 	})
 
