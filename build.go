@@ -48,7 +48,6 @@ func main() {
 		EntryPoints:       []string{"src/index.tsx"},
 		External:          []string{"react", "react-dom"},
 		Plugins: []api.Plugin{
-			plugins.Tailwind,
 			plugins.ReactImport,
 			plugins.SharpImages("images", "dist/images"),
 			plugins.CopyContent("locales", "dist/locales"),

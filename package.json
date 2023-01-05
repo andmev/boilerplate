@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "tailwind": "tailwind build src/main.css -o dist/styles.css -c tailwind.config.js --watch --minify",
     "serve": "lite-server",
     "clear": "rm -rf dist"
   },
