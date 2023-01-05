@@ -65,5 +65,5 @@ func main() {
 
 	// Returning from main() exits immediately in Go.
 	// Block forever, so we keep watching and don't exit.
-	//<-make(chan bool)
+	<-make(chan bool)
 }
